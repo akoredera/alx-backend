@@ -11,7 +11,7 @@ class LIFOCache(BaseCaching):
 
     def put(self, key, item):
         '''must assign to the dictionary'''
-        if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
+        if len(self.cache_data) == BaseCaching.MAX_ITEMS:
             lenCache = len(self.cache_data)
             counter = 0
             for k in self.cache_data.keys():
@@ -20,7 +20,7 @@ class LIFOCache(BaseCaching):
                     print(f'DISCARD: {k}')
                     self.cache_data.popitem()
                     break
-        if key is not None or item is not None:
+        if key is not None and item is not None:
             self.cache_data[key] = item
 
     def get(self, key):
