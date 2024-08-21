@@ -4,6 +4,7 @@ BaseCaching = __import__('base_caching').BaseCaching
 
 
 class BasicCache(BaseCaching):
+    '''basic Cache class'''
     def __init__(self):
         '''constructor inherit from the base'''
         super().__init__()
